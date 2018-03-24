@@ -12,9 +12,8 @@ class App extends Component {
       ProductId: '',
       PayTotal_A: '',
       PlanCount_A: '',
-    }
-    
-    // build please
+    };
+    console.log('build');
     
     this.parseHtml = this.parseHtml.bind(this);
   }
