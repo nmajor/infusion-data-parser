@@ -24,6 +24,13 @@ class App extends Component {
     const ProductId = $($.parseHTML(value)).find("[name='ProductId']")[0].value;
     const PayTotal_A = $($.parseHTML(value)).find("[name='PayTotal_A']")[0].value;
     const PlanCount_A = $($.parseHTML(value)).find("[name='PlanCount_A']")[0].value;
+    
+    const rx = /formId=(.*)"/;
+    const arr = rx.exec(value);
+    let formId = '';
+    if (arr) {      
+      formId = arr[1]; 
+    }
 
     this.setState({
       infusion_xid,
@@ -32,10 +39,10 @@ class App extends Component {
       ProductId,
       PayTotal_A,
       PlanCount_A,
+      formId,
     });
   }
   renderInputHtml() {
-    console.log('blah hey state', this.state);
     const {
       infusion_xid,
       infusion_type,
@@ -65,6 +72,20 @@ class App extends Component {
       `<input value="${PlanCount_A}" type="hidden" name="PlanCount_A" id="PlanCount_A">`
     ];
   }
+  renderFormId() {
+    const { formId } = this.state;
+
+    if (formId) {
+      return (
+        <div>
+          <br />
+          <br />
+          <br />
+          var FORM_ID = {formId}
+        </div>
+      );
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -74,6 +95,9 @@ class App extends Component {
             <textarea onChange={this.parseHtml} />
             <div>
               {this.renderInputHtml()}
+            </div>
+            <div>
+              {this.renderFormId()}
             </div>
           </div>
         </div>
