@@ -1,0 +1,585 @@
+<script type="text/javascript" src="https://mz164.infusionsoft.com/app/webTracking/getTrackingCode"></script>
+<style>
+.custom-order-form {
+font-size: 14px;
+font-family: Helvetica Neue, sans-serif;
+line-height: 1.3em;
+}
+.or-breaker {
+border-bottom: 1px solid #ccc;
+text-align: center;
+color: #666;
+margin-bottom: 45px;
+margin-top: 35px;
+}
+.or-breaker p {
+text-align: center;
+position: relative;
+padding: 0 10px;
+background: #fff;
+top: 10px;
+display: inline;
+margin: auto;
+}
+#orderForm h2 {
+color: #333333;
+font-weight: normal;
+font-size: 1.28571em;
+margin-top: 30px;
+margin-bottom: 20px;
+}
+input {
+-webkit-appearance: textfield;
+background-color: white;
+-webkit-rtl-ordering: logical;
+cursor: text;
+padding: 1px;
+border-width: 2px;
+border-style: inset;
+border-color: initial;
+border-image: initial;
+color: inherit;
+font: inherit;
+margin: 0;
+padding: 0;
+-webkit-appearance: none;
+-webkit-font-smoothing: inherit;
+border: none;
+background: transparent;
+line-height: normal;
+}
+input[type="text"] {
+border-radius: 4px;
+display: block;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+width: 100%;
+padding: 0.94em 0.8em;
+word-break: normal;
+-webkit-transition: all 0.2s ease-out;
+transition: all 0.2s ease-out;
+-webkit-box-shadow: 0 0 0 1px #d9d9d9;
+box-shadow: 0 0 0 1px #d9d9d9;
+}
+select {
+color: inherit;
+font: inherit;
+margin: 0;
+padding: 0;
+-webkit-appearance: none;
+-webkit-font-smoothing: inherit;
+border: none;
+background: transparent;
+line-height: normal;
+border-radius: 4px;
+display: block;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+width: 100%;
+padding: 0.94em 0.8em;
+word-break: normal;
+background-color: white;
+color: #333333;
+-webkit-transition: all 0.2s ease-out;
+transition: all 0.2s ease-out;
+-webkit-box-shadow: 0 0 0 1px #d9d9d9;
+box-shadow: 0 0 0 1px #d9d9d9;
+}
+.field-input-wrapper-select:before {
+content: '';
+position: absolute;
+right: 0;
+top: 0;
+bottom: 0;
+width: 50px;
+background-position: center center;
+background-repeat: no-repeat;
+pointer-events: none;
+background-image: url(https://cdn.shopify.com/s/assets/checkout/dropdown-arrow-down-dark-28046c8256e8793b852da5c568b152cd02148424358f61926621bc827f6be66f.png);
+background-image:
+url(https://cdn.shopify.com/s/assets/checkout/dropdown-arrow-down-dark-03cace330ac9af908922bab6c8e659b8c356ca7093d8b680fb3b09cd4b642ecb.svg),none;
+}
+.fieldset {
+margin: -5px;
+}
+.fieldset:after {
+content: "";
+display: table;
+clear: both;
+}
+.field {
+width: 100%;
+float: left;
+padding: 0.45em;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
+.field-half { width: 50%; }
+.field-two-thirds { width: 66.66667%; }
+.field-one-third { width: 33.33333%; }
+.field-three-eights { width: 37.5%; }
+.field-one-fourth { width: 25%; }
+.field-input-wrapper {
+position: relative;
+}
+.text-right { text-align: right; }
+.btn-original {
+border-radius: 5px;
+font-weight: 500;
+padding: 1.4em 1.7em;
+background: #1990c6;
+color: white;
+display: inline-block;
+border-radius: 4px;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+text-align: center;
+cursor: pointer;
+position: relative;
+-webkit-transition: background 0.2s ease-in-out, color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+transition: background 0.2s ease-in-out, color 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+transition: background 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+transition: background 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+}
+.paypal-button-wrapper {
+margin: 20px 0;
+}
+.paypal-button {
+border-radius: 3px;
+background: #ffc439;
+color: transparent;
+padding: 8px 10px 6px 8px;
+display: inline-block;
+}
+button {
+  font-size: 14px;
+}
+</style>
+<div class="custom-order-form">
+<div class="paypal-button-wrapper">
+<a href="https://mz164.infusionsoft.com/app/orderForms/d-keto-cookbook-bundle-paypal" class="paypal-button" draggable="false">
+<img class="paypal-button-logo paypal-button-logo-pp paypal-button-logo-gold" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAyNCAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWluWU1pbiBtZWV0Ij4KICAgIDxwYXRoIGZpbGw9IiMwMDljZGUiIGQ9Ik0gMjAuOTA1IDkuNSBDIDIxLjE4NSA3LjQgMjAuOTA1IDYgMTkuNzgyIDQuNyBDIDE4LjU2NCAzLjMgMTYuNDExIDIuNiAxMy42OTcgMi42IEwgNS43MzkgMi42IEMgNS4yNzEgMi42IDQuNzEgMy4xIDQuNjE1IDMuNiBMIDEuMzM5IDI1LjggQyAxLjMzOSAyNi4yIDEuNjIgMjYuNyAyLjA4OCAyNi43IEwgNi45NTYgMjYuNyBMIDYuNjc1IDI4LjkgQyA2LjU4MSAyOS4zIDYuODYyIDI5LjYgNy4yMzYgMjkuNiBMIDExLjM1NiAyOS42IEMgMTEuODI1IDI5LjYgMTIuMjkyIDI5LjMgMTIuMzg2IDI4LjggTCAxMi4zODYgMjguNSBMIDEzLjIyOCAyMy4zIEwgMTMuMjI4IDIzLjEgQyAxMy4zMjIgMjIuNiAxMy43OSAyMi4yIDE0LjI1OCAyMi4yIEwgMTQuODIxIDIyLjIgQyAxOC44NDUgMjIuMiAyMS45MzUgMjAuNSAyMi44NzEgMTUuNSBDIDIzLjMzOSAxMy40IDIzLjE1MyAxMS43IDIyLjAyOSAxMC41IEMgMjEuNzQ4IDEwLjEgMjEuMjc5IDkuOCAyMC45MDUgOS41IEwgMjAuOTA1IDkuNSI+PC9wYXRoPgogICAgPHBhdGggZmlsbD0iIzAxMjE2OSIgZD0iTSAyMC45MDUgOS41IEMgMjEuMTg1IDcuNCAyMC45MDUgNiAxOS43ODIgNC43IEMgMTguNTY0IDMuMyAxNi40MTEgMi42IDEzLjY5NyAyLjYgTCA1LjczOSAyLjYgQyA1LjI3MSAyLjYgNC43MSAzLjEgNC42MTUgMy42IEwgMS4zMzkgMjUuOCBDIDEuMzM5IDI2LjIgMS42MiAyNi43IDIuMDg4IDI2LjcgTCA2Ljk1NiAyNi43IEwgOC4yNjcgMTguNCBMIDguMTczIDE4LjcgQyA4LjI2NyAxOC4xIDguNzM1IDE3LjcgOS4yOTYgMTcuNyBMIDExLjYzNiAxNy43IEMgMTYuMjI0IDE3LjcgMTkuNzgyIDE1LjcgMjAuOTA1IDEwLjEgQyAyMC44MTIgOS44IDIwLjkwNSA5LjcgMjAuOTA1IDkuNSI+PC9wYXRoPgogICAgPHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSA5LjQ4NSA5LjUgQyA5LjU3NyA5LjIgOS43NjUgOC45IDEwLjA0NiA4LjcgQyAxMC4yMzIgOC43IDEwLjMyNiA4LjYgMTAuNTEzIDguNiBMIDE2LjY5MiA4LjYgQyAxNy40NDIgOC42IDE4LjE4OSA4LjcgMTguNzUzIDguOCBDIDE4LjkzOSA4LjggMTkuMTI3IDguOCAxOS4zMTQgOC45IEMgMTkuNTAxIDkgMTkuNjg4IDkgMTkuNzgyIDkuMSBDIDE5Ljg3NSA5LjEgMTkuOTY4IDkuMSAyMC4wNjMgOS4xIEMgMjAuMzQzIDkuMiAyMC42MjQgOS40IDIwLjkwNSA5LjUgQyAyMS4xODUgNy40IDIwLjkwNSA2IDE5Ljc4MiA0LjYgQyAxOC42NTggMy4yIDE2LjUwNiAyLjYgMTMuNzkgMi42IEwgNS43MzkgMi42IEMgNS4yNzEgMi42IDQuNzEgMyA0LjYxNSAzLjYgTCAxLjMzOSAyNS44IEMgMS4zMzkgMjYuMiAxLjYyIDI2LjcgMi4wODggMjYuNyBMIDYuOTU2IDI2LjcgTCA4LjI2NyAxOC40IEwgOS40ODUgOS41IFoiPjwvcGF0aD4KPC9zdmc+Cg==" alt="pp" style="visibility: visible;" draggable="false">
+<img class="paypal-button-logo paypal-button-logo-paypal paypal-button-logo-gold" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjMyIiB2aWV3Qm94PSIwIDAgMTAwIDMyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaW5ZTWluIG1lZXQiPgogICAgPHBhdGggZmlsbD0iIzAwMzA4NyIgZD0iTSAxMiA0LjkxNyBMIDQuMiA0LjkxNyBDIDMuNyA0LjkxNyAzLjIgNS4zMTcgMy4xIDUuODE3IEwgMCAyNS44MTcgQyAtMC4xIDI2LjIxNyAwLjIgMjYuNTE3IDAuNiAyNi41MTcgTCA0LjMgMjYuNTE3IEMgNC44IDI2LjUxNyA1LjMgMjYuMTE3IDUuNCAyNS42MTcgTCA2LjIgMjAuMjE3IEMgNi4zIDE5LjcxNyA2LjcgMTkuMzE3IDcuMyAxOS4zMTcgTCA5LjggMTkuMzE3IEMgMTQuOSAxOS4zMTcgMTcuOSAxNi44MTcgMTguNyAxMS45MTcgQyAxOSA5LjgxNyAxOC43IDguMTE3IDE3LjcgNi45MTcgQyAxNi42IDUuNjE3IDE0LjYgNC45MTcgMTIgNC45MTcgWiBNIDEyLjkgMTIuMjE3IEMgMTIuNSAxNS4wMTcgMTAuMyAxNS4wMTcgOC4zIDE1LjAxNyBMIDcuMSAxNS4wMTcgTCA3LjkgOS44MTcgQyA3LjkgOS41MTcgOC4yIDkuMzE3IDguNSA5LjMxNyBMIDkgOS4zMTcgQyAxMC40IDkuMzE3IDExLjcgOS4zMTcgMTIuNCAxMC4xMTcgQyAxMi45IDEwLjUxNyAxMy4xIDExLjIxNyAxMi45IDEyLjIxNyBaIj48L3BhdGg+CiAgICA8cGF0aCBmaWxsPSIjMDAzMDg3IiBkPSJNIDM1LjIgMTIuMTE3IEwgMzEuNSAxMi4xMTcgQyAzMS4yIDEyLjExNyAzMC45IDEyLjMxNyAzMC45IDEyLjYxNyBMIDMwLjcgMTMuNjE3IEwgMzAuNCAxMy4yMTcgQyAyOS42IDEyLjAxNyAyNy44IDExLjYxNyAyNiAxMS42MTcgQyAyMS45IDExLjYxNyAxOC40IDE0LjcxNyAxNy43IDE5LjExNyBDIDE3LjMgMjEuMzE3IDE3LjggMjMuNDE3IDE5LjEgMjQuODE3IEMgMjAuMiAyNi4xMTcgMjEuOSAyNi43MTcgMjMuOCAyNi43MTcgQyAyNy4xIDI2LjcxNyAyOSAyNC42MTcgMjkgMjQuNjE3IEwgMjguOCAyNS42MTcgQyAyOC43IDI2LjAxNyAyOSAyNi40MTcgMjkuNCAyNi40MTcgTCAzMi44IDI2LjQxNyBDIDMzLjMgMjYuNDE3IDMzLjggMjYuMDE3IDMzLjkgMjUuNTE3IEwgMzUuOSAxMi43MTcgQyAzNiAxMi41MTcgMzUuNiAxMi4xMTcgMzUuMiAxMi4xMTcgWiBNIDMwLjEgMTkuMzE3IEMgMjkuNyAyMS40MTcgMjguMSAyMi45MTcgMjUuOSAyMi45MTcgQyAyNC44IDIyLjkxNyAyNCAyMi42MTcgMjMuNCAyMS45MTcgQyAyMi44IDIxLjIxNyAyMi42IDIwLjMxNyAyMi44IDE5LjMxNyBDIDIzLjEgMTcuMjE3IDI0LjkgMTUuNzE3IDI3IDE1LjcxNyBDIDI4LjEgMTUuNzE3IDI4LjkgMTYuMTE3IDI5LjUgMTYuNzE3IEMgMzAgMTcuNDE3IDMwLjIgMTguMzE3IDMwLjEgMTkuMzE3IFoiPjwvcGF0aD4KICAgIDxwYXRoIGZpbGw9IiMwMDMwODciIGQ9Ik0gNTUuMSAxMi4xMTcgTCA1MS40IDEyLjExNyBDIDUxIDEyLjExNyA1MC43IDEyLjMxNyA1MC41IDEyLjYxNyBMIDQ1LjMgMjAuMjE3IEwgNDMuMSAxMi45MTcgQyA0MyAxMi40MTcgNDIuNSAxMi4xMTcgNDIuMSAxMi4xMTcgTCAzOC40IDEyLjExNyBDIDM4IDEyLjExNyAzNy42IDEyLjUxNyAzNy44IDEzLjAxNyBMIDQxLjkgMjUuMTE3IEwgMzggMzAuNTE3IEMgMzcuNyAzMC45MTcgMzggMzEuNTE3IDM4LjUgMzEuNTE3IEwgNDIuMiAzMS41MTcgQyA0Mi42IDMxLjUxNyA0Mi45IDMxLjMxNyA0My4xIDMxLjAxNyBMIDU1LjYgMTMuMDE3IEMgNTUuOSAxMi43MTcgNTUuNiAxMi4xMTcgNTUuMSAxMi4xMTcgWiI+PC9wYXRoPgogICAgPHBhdGggZmlsbD0iIzAwOWNkZSIgZD0iTSA2Ny41IDQuOTE3IEwgNTkuNyA0LjkxNyBDIDU5LjIgNC45MTcgNTguNyA1LjMxNyA1OC42IDUuODE3IEwgNTUuNSAyNS43MTcgQyA1NS40IDI2LjExNyA1NS43IDI2LjQxNyA1Ni4xIDI2LjQxNyBMIDYwLjEgMjYuNDE3IEMgNjAuNSAyNi40MTcgNjAuOCAyNi4xMTcgNjAuOCAyNS44MTcgTCA2MS43IDIwLjExNyBDIDYxLjggMTkuNjE3IDYyLjIgMTkuMjE3IDYyLjggMTkuMjE3IEwgNjUuMyAxOS4yMTcgQyA3MC40IDE5LjIxNyA3My40IDE2LjcxNyA3NC4yIDExLjgxNyBDIDc0LjUgOS43MTcgNzQuMiA4LjAxNyA3My4yIDYuODE3IEMgNzIgNS42MTcgNzAuMSA0LjkxNyA2Ny41IDQuOTE3IFogTSA2OC40IDEyLjIxNyBDIDY4IDE1LjAxNyA2NS44IDE1LjAxNyA2My44IDE1LjAxNyBMIDYyLjYgMTUuMDE3IEwgNjMuNCA5LjgxNyBDIDYzLjQgOS41MTcgNjMuNyA5LjMxNyA2NCA5LjMxNyBMIDY0LjUgOS4zMTcgQyA2NS45IDkuMzE3IDY3LjIgOS4zMTcgNjcuOSAxMC4xMTcgQyA2OC40IDEwLjUxNyA2OC41IDExLjIxNyA2OC40IDEyLjIxNyBaIj48L3BhdGg+CiAgICA8cGF0aCBmaWxsPSIjMDA5Y2RlIiBkPSJNIDkwLjcgMTIuMTE3IEwgODcgMTIuMTE3IEMgODYuNyAxMi4xMTcgODYuNCAxMi4zMTcgODYuNCAxMi42MTcgTCA4Ni4yIDEzLjYxNyBMIDg1LjkgMTMuMjE3IEMgODUuMSAxMi4wMTcgODMuMyAxMS42MTcgODEuNSAxMS42MTcgQyA3Ny40IDExLjYxNyA3My45IDE0LjcxNyA3My4yIDE5LjExNyBDIDcyLjggMjEuMzE3IDczLjMgMjMuNDE3IDc0LjYgMjQuODE3IEMgNzUuNyAyNi4xMTcgNzcuNCAyNi43MTcgNzkuMyAyNi43MTcgQyA4Mi42IDI2LjcxNyA4NC41IDI0LjYxNyA4NC41IDI0LjYxNyBMIDg0LjMgMjUuNjE3IEMgODQuMiAyNi4wMTcgODQuNSAyNi40MTcgODQuOSAyNi40MTcgTCA4OC4zIDI2LjQxNyBDIDg4LjggMjYuNDE3IDg5LjMgMjYuMDE3IDg5LjQgMjUuNTE3IEwgOTEuNCAxMi43MTcgQyA5MS40IDEyLjUxNyA5MS4xIDEyLjExNyA5MC43IDEyLjExNyBaIE0gODUuNSAxOS4zMTcgQyA4NS4xIDIxLjQxNyA4My41IDIyLjkxNyA4MS4zIDIyLjkxNyBDIDgwLjIgMjIuOTE3IDc5LjQgMjIuNjE3IDc4LjggMjEuOTE3IEMgNzguMiAyMS4yMTcgNzggMjAuMzE3IDc4LjIgMTkuMzE3IEMgNzguNSAxNy4yMTcgODAuMyAxNS43MTcgODIuNCAxNS43MTcgQyA4My41IDE1LjcxNyA4NC4zIDE2LjExNyA4NC45IDE2LjcxNyBDIDg1LjUgMTcuNDE3IDg1LjcgMTguMzE3IDg1LjUgMTkuMzE3IFoiPjwvcGF0aD4KICAgIDxwYXRoIGZpbGw9IiMwMDljZGUiIGQ9Ik0gOTUuMSA1LjQxNyBMIDkxLjkgMjUuNzE3IEMgOTEuOCAyNi4xMTcgOTIuMSAyNi40MTcgOTIuNSAyNi40MTcgTCA5NS43IDI2LjQxNyBDIDk2LjIgMjYuNDE3IDk2LjcgMjYuMDE3IDk2LjggMjUuNTE3IEwgMTAwIDUuNjE3IEMgMTAwLjEgNS4yMTcgOTkuOCA0LjkxNyA5OS40IDQuOTE3IEwgOTUuOCA0LjkxNyBDIDk1LjQgNC45MTcgOTUuMiA1LjExNyA5NS4xIDUuNDE3IFoiPjwvcGF0aD4KPC9zdmc+Cg==" alt="paypal" style="visibility: visible;" draggable="false">
+</a>
+</div>
+<div class="or-breaker"><p>OR</p></div>
+<form id="orderForm" action="https://mz164.infusionsoft.com/AddForms/processFormSecure.jsp" method="POST">
+
+<!-- CHANGE THESE FIELDS BELOW -->
+<input value="e8b270741792703ee8d3b873918274c6" type="hidden" name="infusion_xid" id="infusion_xid">
+<input value="CustomFormSale" type="hidden" name="infusion_type" id="infusion_type">
+<input value="Test Legacy Form" type="hidden" name="infusion_name" id="infusion_name">
+<input type="hidden" name="CAttempt" id="CAttempt">
+<input value="true" type="hidden" name="NotLegacy" id="NotLegacy">
+<input value="189" type="hidden" name="ProductId" id="ProductId">
+<input value="0.05" type="hidden" name="PayTotal_A" id="PayTotal_A">
+<input value="1" type="hidden" name="PlanCount_A" id="PlanCount_A">
+<!-- CHANGE THESE FIELDS ABOVE -->
+
+<div>
+<div id="inf-contact-billing-section">
+<h2>Contact Information</h2>
+<div class="fieldset">
+<div class="field">
+<div class="field-input-wrapper">
+<input placeholder="Email" required="true" type="text" name="Contact0Email" value="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAfBJREFUWAntVk1OwkAUZkoDKza4Utm61iP0AqyIDXahN2BjwiHYGU+gizap4QDuegWN7lyCbMSlCQjU7yO0TOlAi6GwgJc0fT/fzPfmzet0crmD7HsFBAvQbrcrw+Gw5fu+AfOYvgylJ4TwCoVCs1ardYTruqfj8fgV5OUMSVVT93VdP9dAzpVvm5wJHZFbg2LQ2pEYOlZ/oiDvwNcsFoseY4PBwMCrhaeCJyKWZU37KOJcYdi27QdhcuuBIb073BvTNL8ln4NeeR6NRi/wxZKQcGurQs5oNhqLshzVTMBewW/LMU3TTNlO0ieTiStjYhUIyi6DAp0xbEdgTt+LE0aCKQw24U4llsCs4ZRJrYopB6RwqnpA1YQ5NGFZ1YQ41Z5S8IQQdP5laEBRJcD4Vj5DEsW2gE6s6g3d/YP/g+BDnT7GNi2qCjTwGd6riBzHaaCEd3Js01vwCPIbmWBRx1nwAN/1ov+/drgFWIlfKpVukyYihtgkXNp4mABK+1GtVr+SBhJDbBIubVw+Cd/TDgKO2DPiN3YUo6y/nDCNEIsqTKH1en2tcwA9FKEItyDi3aIh8Gl1sRrVnSDzNFDJT1bAy5xpOYGn5fP5JuL95ZjMIn1ya7j5dPGfv0A5eAnpZUY3n5jXcoec5J67D9q+VuAPM47D3XaSeL4AAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+</div>
+</div>
+</div>
+<h2>Billing Address</h2>
+<div class="fieldset">
+<div class="field field-half">
+<div class="field-input-wrapper">
+<input placeholder="First Name" required="true" type="text" name="Contact0FirstName" value="">
+</div>
+</div>
+<div class="field field-half">
+<div class="field-input-wrapper">
+<input placeholder="Last Name" required="true" type="text" name="Contact0LastName" value="">
+</div>
+</div>
+<div class="field field-two-thirds">
+<div class="field-input-wrapper">
+<input placeholder="Address" required="true" type="text" name="Contact0StreetAddress1" size="35">
+</div>
+</div>
+<div class="field field-one-third">
+<div class="field-input-wrapper">
+<input placeholder="Apt, suite, etc. (optional)" type="text" name="Contact0StreetAddress2" size="35">
+</div>
+</div>
+<div class="field">
+<div class="field-input-wrapper">
+<input placeholder="City" required="true" type="text" name="Contact0City" size="25">
+</div>
+</div>
+<div class="field field-three-eights">
+<div class="field-input-wrapper field-input-wrapper-select">
+<select name="Contact0Country">
+<option value="">Country</option>
+<option>Afghanistan</option>
+<option value="Åland Islands">Åland Islands</option>
+<option>Albania</option>
+<option>Algeria</option>
+<option>American Samoa</option>
+<option>Andorra</option>
+<option>Angola</option>
+<option>Anguilla</option>
+<option>Antarctica</option>
+<option>Antigua and Barbuda</option>
+<option>Argentina</option>
+<option>Armenia</option>
+<option>Aruba</option>
+<option>Australia</option>
+<option>Austria</option>
+<option>Azerbaijan</option>
+<option>Bahamas (the)</option>
+<option>Bahrain</option>
+<option>Bangladesh</option>
+<option>Barbados</option>
+<option>Belarus</option>
+<option>Belgium</option>
+<option>Belize</option>
+<option>Benin</option>
+<option>Bermuda</option>
+<option>Bhutan</option>
+<option>Bolivia (Plurinational State of)</option>
+<option>Bonaire, Sint Eustatius and Saba</option>
+<option>Bosnia and Herzegovina</option>
+<option>Botswana</option>
+<option>Bouvet Island</option>
+<option>Brazil</option>
+<option>British Indian Ocean Territory (the)</option>
+<option>Brunei Darussalam</option>
+<option>Bulgaria</option>
+<option>Burkina Faso</option>
+<option>Burundi</option>
+<option>Cabo Verde</option>
+<option>Cambodia</option>
+<option>Cameroon</option>
+<option>Canada</option>
+<option>Cayman Islands (the)</option>
+<option>Central African Republic (the)</option>
+<option>Chad</option>
+<option>Chile</option>
+<option>China</option>
+<option>Christmas Island</option>
+<option>Cocos (Keeling) Islands (the)</option>
+<option>Colombia</option>
+<option>Comoros (the)</option>
+<option>Congo (the Democratic Republic of the)</option>
+<option>Congo (the)</option>
+<option>Cook Islands (the)</option>
+<option>Costa Rica</option>
+<option value="Côte d'Ivoire">Côte d'Ivoire</option>
+<option>Croatia</option>
+<option>Cuba</option>
+<option value="Curaçao">Curaçao</option>
+<option>Cyprus</option>
+<option>Czech Republic (the)</option>
+<option>Denmark</option>
+<option>Djibouti</option>
+<option>Dominica</option>
+<option>Dominican Republic (the)</option>
+<option>Ecuador</option>
+<option>Egypt</option>
+<option>El Salvador</option>
+<option>Equatorial Guinea</option>
+<option>Eritrea</option>
+<option>Estonia</option>
+<option>Ethiopia</option>
+<option>Falkland Islands (the) [Malvinas]</option>
+<option>Faroe Islands (the)</option>
+<option>Fiji</option>
+<option>Finland</option>
+<option>France</option>
+<option>French Guiana</option>
+<option>French Polynesia</option>
+<option>French Southern Territories (the)</option>
+<option>Gabon</option>
+<option>Gambia (the)</option>
+<option>Georgia</option>
+<option>Germany</option>
+<option>Ghana</option>
+<option>Gibraltar</option>
+<option>Greece</option>
+<option>Greenland</option>
+<option>Grenada</option>
+<option>Guadeloupe</option>
+<option>Guam</option>
+<option>Guatemala</option>
+<option>Guernsey</option>
+<option>Guinea</option>
+<option>Guinea-Bissau</option>
+<option>Guyana</option>
+<option>Haiti</option>
+<option>Heard Island and McDonald Islands</option>
+<option>Holy See (the)</option>
+<option>Honduras</option>
+<option>Hong Kong</option>
+<option>Hungary</option>
+<option>Iceland</option>
+<option>India</option>
+<option>Indonesia</option>
+<option>Iran (Islamic Republic of)</option>
+<option>Iraq</option>
+<option>Ireland</option>
+<option>Isle of Man</option>
+<option>Israel</option>
+<option>Italy</option>
+<option>Jamaica</option>
+<option>Japan</option>
+<option>Jersey</option>
+<option>Johnston Island</option>
+<option>Jordan</option>
+<option>Kazakhstan</option>
+<option>Kenya</option>
+<option>Kiribati</option>
+<option>Korea (the Democratic People's Republic of)</option>
+<option>Korea (the Republic of)</option>
+<option>Kuwait</option>
+<option>Kyrgyzstan</option>
+<option>Lao People's Democratic Republic (the)</option>
+<option>Latvia</option>
+<option>Lebanon</option>
+<option>Lesotho</option>
+<option>Liberia</option>
+<option>Libya</option>
+<option>Liechtenstein</option>
+<option>Lithuania</option>
+<option>Luxembourg</option>
+<option>Macao</option>
+<option>Macedonia (the former Yugoslav Republic of)</option>
+<option>Madagascar</option>
+<option>Malawi</option>
+<option>Malaysia</option>
+<option>Maldives</option>
+<option>Mali</option>
+<option>Malta</option>
+<option>Marshall Islands (the)</option>
+<option>Martinique</option>
+<option>Mauritania</option>
+<option>Mauritius</option>
+<option>Mayotte</option>
+<option>Mexico</option>
+<option>Micronesia (Federated States of)</option>
+<option>Midway Islands</option>
+<option>Moldova (the Republic of)</option>
+<option>Monaco</option>
+<option>Mongolia</option>
+<option>Montenegro</option>
+<option>Montserrat</option>
+<option>Morocco</option>
+<option>Mozambique</option>
+<option>Myanmar</option>
+<option>Namibia</option>
+<option>Nauru</option>
+<option>Nepal</option>
+<option>Netherlands (the)</option>
+<option>New Caledonia</option>
+<option>New Zealand</option>
+<option>Nicaragua</option>
+<option>Niger (the)</option>
+<option>Nigeria</option>
+<option>Niue</option>
+<option>Norfolk Island</option>
+<option>Northern Mariana Islands (the)</option>
+<option>Norway</option>
+<option>Oman</option>
+<option>Pakistan</option>
+<option>Palau</option>
+<option>Palestine, State of</option>
+<option>Panama</option>
+<option>Papua New Guinea</option>
+<option>Paraguay</option>
+<option>Peru</option>
+<option>Philippines (the)</option>
+<option>Pitcairn</option>
+<option>Poland</option>
+<option>Portugal</option>
+<option>Puerto Rico</option>
+<option>Qatar</option>
+<option value="Réunion">Réunion</option>
+<option>Romania</option>
+<option>Russian Federation (the)</option>
+<option>Rwanda</option>
+<option value="Saint Barthélemy">Saint Barthélemy</option>
+<option>Saint Helena, Ascension and Tristan da Cunha</option>
+<option>Saint Kitts and Nevis</option>
+<option>Saint Lucia</option>
+<option>Saint Martin (French part)</option>
+<option>Saint Pierre and Miquelon</option>
+<option>Saint Vincent and the Grenadines</option>
+<option>Samoa</option>
+<option>San Marino</option>
+<option>Sao Tome and Principe</option>
+<option>Saudi Arabia</option>
+<option>Senegal</option>
+<option>Serbia</option>
+<option>Seychelles</option>
+<option>Sierra Leone</option>
+<option>Singapore</option>
+<option>Sint Maarten (Dutch part)</option>
+<option>Slovakia</option>
+<option>Slovenia</option>
+<option>Solomon Islands</option>
+<option>Somalia</option>
+<option>South Africa</option>
+<option>South Georgia and the South Sandwich Islands</option>
+<option>South Sudan</option>
+<option>Southern Rhodesia</option>
+<option>Spain</option>
+<option>Sri Lanka</option>
+<option>Sudan (the)</option>
+<option>Suriname</option>
+<option>Svalbard and Jan Mayen</option>
+<option>Swaziland</option>
+<option>Sweden</option>
+<option>Switzerland</option>
+<option>Syrian Arab Republic</option>
+<option>Taiwan (Province of China)</option>
+<option>Tajikistan</option>
+<option>Tanzania, United Republic of</option>
+<option>Thailand</option>
+<option>Timor-Leste</option>
+<option>Togo</option>
+<option>Tokelau</option>
+<option>Tonga</option>
+<option>Trinidad and Tobago</option>
+<option>Tunisia</option>
+<option>Turkey</option>
+<option>Turkmenistan</option>
+<option>Turks and Caicos Islands (the)</option>
+<option>Tuvalu</option>
+<option>Uganda</option>
+<option>Ukraine</option>
+<option>United Arab Emirates (the)</option>
+<option>United Kingdom</option>
+<option selected="selected">United States</option>
+<option>United States Minor Outlying Islands (the)</option>
+<option>Upper Volta</option>
+<option>Uruguay</option>
+<option>Uzbekistan</option>
+<option>Vanuatu</option>
+<option>Venezuela (Bolivarian Republic of)</option>
+<option>Viet Nam</option>
+<option>Virgin Islands (British)</option>
+<option>Virgin Islands (U.S.)</option>
+<option>Wallis and Futuna</option>
+<option>Western Sahara</option>
+<option>Yemen</option>
+<option>Zambia</option>
+<option>Zimbabwe</option>
+</select>
+</div>
+</div>
+<div class="field field-three-eights">
+<div class="field-input-wrapper">
+<input placeholder="State" required="true" type="text" name="Contact0State" size="2" maxlength="2">
+</div>
+</div>
+<div class="field field-one-fourth">
+<div class="field-input-wrapper">
+<input placeholder="Postal Code" required="true" type="text" name="Contact0PostalCode" size="15">
+</div>
+</div>
+</div>
+</div>
+<div id="inf-payment-section" style="display: none;">
+<h2>Payment Information</h2>
+<div class="fieldset">
+<div class="field">
+<div class="field-input-wrapper field-input-wrapper-select">
+<select name="CreditCard0CardType">
+<option value="">Card Type</option>
+<option>Visa</option>
+<option>Master</option>
+<option>Discover</option>
+<option>American Express</option>
+</select>
+</div>
+</div>
+<div class="field">
+<div class="field-input-wrapper">
+<input placeholder="Card Number" type="text" name="CreditCard0CardNumber" size="35" maxlength="16" autocomplete="off">
+</div>
+</div>
+<div class="field field-half">
+<div class="field-input-wrapper field-input-wrapper-select">
+<select name="CreditCard0ExpirationMonth">
+<option value="">Exp Month</option>
+<option>01</option>
+<option>02</option>
+<option>03</option>
+<option>04</option>
+<option>05</option>
+<option>06</option>
+<option>07</option>
+<option>08</option>
+<option>09</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+</select>
+</div>
+</div>
+<div class="field field-half">
+<div class="field-input-wrapper field-input-wrapper-select">
+<select name="CreditCard0ExpirationYear">
+<option value="">Exp Year</option>
+<option>2018</option>
+<option>2019</option>
+<option>2020</option>
+<option>2021</option>
+<option>2022</option>
+<option>2023</option>
+<option>2024</option>
+<option>2025</option>
+<option>2026</option>
+<option>2027</option>
+<option>2028</option>
+<option>2029</option>
+<option>2030</option>
+<option>2031</option>
+<option>2032</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<div>
+<input syle="display: none;" type="radio" name="PurchaseType" value="A" checked="">
+</div>
+<div class="text-right">
+<div id="inf-next" class="btn-original">Next</div>
+<div id="inf-back" class="btn-original" style="display: none; padding-top: 17px;">Back</div>
+<input id="inf-submit" style="display: none;" class="btn-original" value="Complete Order" type="submit" name="Order">
+</div>
+</div>
+</form>
+</div>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script>
+jQuery(document).ready(function() {
+  jQuery('#inf-next').on('click', function(elm) {
+    jQuery('#inf-contact-billing-section').hide();
+    jQuery('#inf-next').hide();
+
+    jQuery('#inf-payment-section').show();
+    jQuery('#inf-back').show();
+    jQuery('#inf-submit').show();
+  });
+
+  jQuery('#inf-back').on('click', function(elm) {
+    jQuery('#inf-contact-billing-section').show();
+    jQuery('#inf-next').show();
+
+    jQuery('#inf-payment-section').hide();
+    jQuery('#inf-back').hide();
+    jQuery('#inf-submit').hide();
+  });
+});
+</script>
