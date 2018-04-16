@@ -171,8 +171,10 @@ display: inline-block;
 <input type="hidden" name="CAttempt" id="CAttempt">
 <input value="true" type="hidden" name="NotLegacy" id="NotLegacy">
 <input value="189" type="hidden" name="ProductId" id="ProductId">
+<input value="0.05" type="hidden" name="baseTotal" id="baseTotal">
 <input value="0.05" type="hidden" name="PayTotal_A" id="PayTotal_A">
 <input value="1" type="hidden" name="PlanCount_A" id="PlanCount_A">
+<input id="key" type="hidden" name="key" value="a0ceb8a8850af252458544bd148bfe231d2b637f0d57fe798ed1eab37bb99b96">
 <!-- CHANGE THESE FIELDS ABOVE -->
 
 <div>
@@ -867,9 +869,9 @@ jQuery(document).ready(function() {
   });
   setShippingOption();
 
-  // NOT USING BELOW CODE YET
-  // Change to formId from
+  // CHANGE FORM ID
   var FORM_ID = 1;
+  // CHANGE FORM ID
 
   function recalculateShipping() {
     var dataType = "json";
@@ -894,9 +896,20 @@ jQuery(document).ready(function() {
       data: sanitized,
       dataType: dataType,
       success: function(data, textStatus, jqXHR) {
-        console.log('blah hey data', data);
+        var baseValue = parseFloat(jQuery('#baseTotal').val());
+        var shippingValue = parseFloat(data.quotes[0].price);
+        var shippingOptionId = data.quotes[0].id;
+
+        jQuery('#PayTotal_A').val(baseValue + shippingValue);
+        jQuery('[name="ShippingOptionId"]').val(shippingOptionId);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+         console.log(errorThrown);
       }
     });
   }
+
+  jQuery("#orderForm input").on('blur', recalculateShipping);
+
 });
 </script>

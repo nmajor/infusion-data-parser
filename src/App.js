@@ -14,7 +14,7 @@ class App extends Component {
       PlanCount_A: '',
     };
     console.log('build');
-    
+
     this.parseHtml = this.parseHtml.bind(this);
   }
   parseHtml(evt) {
@@ -25,12 +25,13 @@ class App extends Component {
     const ProductId = $($.parseHTML(value)).find("[name='ProductId']")[0].value;
     const PayTotal_A = $($.parseHTML(value)).find("[name='PayTotal_A']")[0].value;
     const PlanCount_A = $($.parseHTML(value)).find("[name='PlanCount_A']")[0].value;
-    
+    const key = $($.parseHTML(value)).find("[name='key']")[0].value;
+
     const rx = /formId=(.*)"/;
     const arr = rx.exec(value);
     let formId = '';
-    if (arr) {      
-      formId = arr[1]; 
+    if (arr) {
+      formId = arr[1];
     }
 
     this.setState({
@@ -40,6 +41,7 @@ class App extends Component {
       ProductId,
       PayTotal_A,
       PlanCount_A,
+      key,
       formId,
     });
   }
@@ -51,8 +53,9 @@ class App extends Component {
       ProductId,
       PayTotal_A,
       PlanCount_A,
+      key,
     } = this.state;
-    
+
     if (!infusion_xid) return;
 
     return [
@@ -70,7 +73,11 @@ class App extends Component {
       <br />,
       `<input value="${PayTotal_A}" type="hidden" name="PayTotal_A" id="PayTotal_A">`,
       <br />,
-      `<input value="${PlanCount_A}" type="hidden" name="PlanCount_A" id="PlanCount_A">`
+      `<input value="${PayTotal_A}" type="hidden" name="baseTotal" id="baseTotal">`,
+      <br />,
+      `<input value="${PlanCount_A}" type="hidden" name="PlanCount_A" id="PlanCount_A">`,
+      <br />,
+      `<input value="${key}" type="hidden" name="key" id="key">`,
     ];
   }
   renderFormId() {
@@ -87,6 +94,22 @@ class App extends Component {
       );
     }
   }
+  renderValues() {
+    if (!this.state.infusion_xid) return null;
+
+    return (<div>
+      <div style={{ textAlign: 'left' }}>
+        <h3>Hidden Attributes</h3>
+        <p>Replace the section that says: "CHANGE THESE FIELDS BELOW" with this code:</p>
+        {this.renderInputHtml()}
+      </div>
+      <div style={{ textAlign: 'left' }}>
+        <h3>Form ID</h3>
+        <p>Find the comment that says "CHANGE FORM ID" and replace the FORM_ID value with this:</p>
+        {this.renderFormId()}
+      </div>
+    </div>);
+  }
   render() {
     return (
       <div className="App">
@@ -94,12 +117,7 @@ class App extends Component {
           <div className="col-md-6 col-md-offset-3">
             <h3>Paste in the whole page html:</h3>
             <textarea onChange={this.parseHtml} />
-            <div>
-              {this.renderInputHtml()}
-            </div>
-            <div>
-              {this.renderFormId()}
-            </div>
+            {this.renderValues()}
           </div>
         </div>
       </div>

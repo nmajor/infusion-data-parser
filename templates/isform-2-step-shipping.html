@@ -161,6 +161,8 @@ display: inline-block;
 </div>
 <div class="or-breaker"><p>OR</p></div>
 <form id="orderForm" action="https://mz164.infusionsoft.com/AddForms/processFormSecure.jsp" method="POST">
+  <input id="DoShipping" type="hidden" name="DoShipping" value="true" />
+  <input id="quote0" type="radio" name="ShippingOptionId" value="" checked="checked">
 
 <!-- CHANGE THESE FIELDS BELOW -->
 <input value="e8b270741792703ee8d3b873918274c6" type="hidden" name="infusion_xid" id="infusion_xid">
@@ -169,11 +171,14 @@ display: inline-block;
 <input type="hidden" name="CAttempt" id="CAttempt">
 <input value="true" type="hidden" name="NotLegacy" id="NotLegacy">
 <input value="189" type="hidden" name="ProductId" id="ProductId">
+<input value="0.05" type="hidden" name="baseTotal" id="baseTotal">
 <input value="0.05" type="hidden" name="PayTotal_A" id="PayTotal_A">
 <input value="1" type="hidden" name="PlanCount_A" id="PlanCount_A">
+<input id="key" type="hidden" name="key" value="a0ceb8a8850af252458544bd148bfe231d2b637f0d57fe798ed1eab37bb99b96">
 <!-- CHANGE THESE FIELDS ABOVE -->
 
 <div>
+<div id="inf-contact-billing-section">
 <h2>Contact Information</h2>
 <div class="fieldset">
 <div class="field">
@@ -451,7 +456,7 @@ display: inline-block;
 <option>Ukraine</option>
 <option>United Arab Emirates (the)</option>
 <option>United Kingdom</option>
-<option selected="selected">United States</option>
+<option>United States</option>
 <option>United States Minor Outlying Islands (the)</option>
 <option>Upper Volta</option>
 <option>Uruguay</option>
@@ -480,6 +485,300 @@ display: inline-block;
 </div>
 </div>
 </div>
+
+<div id="inf-shipping-section">
+<h2>Shipping Address</h2>
+<h4>Leave blank if same as above</h4>
+<div class="fieldset">
+<div class="field field-two-thirds">
+<div class="field-input-wrapper">
+<input placeholder="Address" required="true" type="text" name="Contact0Address2Street1" size="35">
+</div>
+</div>
+<div class="field field-one-third">
+<div class="field-input-wrapper">
+<input placeholder="Apt, suite, etc. (optional)" type="text" name="Contact0Address2Street2" size="35">
+</div>
+</div>
+<div class="field">
+<div class="field-input-wrapper">
+<input placeholder="City" required="true" type="text" name="Contact0City2" size="25">
+</div>
+</div>
+<div class="field field-three-eights">
+<div class="field-input-wrapper field-input-wrapper-select">
+<select name="Contact0Country2">
+<option value="">Country</option>
+<option>Afghanistan</option>
+<option value="Åland Islands">Åland Islands</option>
+<option>Albania</option>
+<option>Algeria</option>
+<option>American Samoa</option>
+<option>Andorra</option>
+<option>Angola</option>
+<option>Anguilla</option>
+<option>Antarctica</option>
+<option>Antigua and Barbuda</option>
+<option>Argentina</option>
+<option>Armenia</option>
+<option>Aruba</option>
+<option>Australia</option>
+<option>Austria</option>
+<option>Azerbaijan</option>
+<option>Bahamas (the)</option>
+<option>Bahrain</option>
+<option>Bangladesh</option>
+<option>Barbados</option>
+<option>Belarus</option>
+<option>Belgium</option>
+<option>Belize</option>
+<option>Benin</option>
+<option>Bermuda</option>
+<option>Bhutan</option>
+<option>Bolivia (Plurinational State of)</option>
+<option>Bonaire, Sint Eustatius and Saba</option>
+<option>Bosnia and Herzegovina</option>
+<option>Botswana</option>
+<option>Bouvet Island</option>
+<option>Brazil</option>
+<option>British Indian Ocean Territory (the)</option>
+<option>Brunei Darussalam</option>
+<option>Bulgaria</option>
+<option>Burkina Faso</option>
+<option>Burundi</option>
+<option>Cabo Verde</option>
+<option>Cambodia</option>
+<option>Cameroon</option>
+<option>Canada</option>
+<option>Cayman Islands (the)</option>
+<option>Central African Republic (the)</option>
+<option>Chad</option>
+<option>Chile</option>
+<option>China</option>
+<option>Christmas Island</option>
+<option>Cocos (Keeling) Islands (the)</option>
+<option>Colombia</option>
+<option>Comoros (the)</option>
+<option>Congo (the Democratic Republic of the)</option>
+<option>Congo (the)</option>
+<option>Cook Islands (the)</option>
+<option>Costa Rica</option>
+<option value="Côte d'Ivoire">Côte d'Ivoire</option>
+<option>Croatia</option>
+<option>Cuba</option>
+<option value="Curaçao">Curaçao</option>
+<option>Cyprus</option>
+<option>Czech Republic (the)</option>
+<option>Denmark</option>
+<option>Djibouti</option>
+<option>Dominica</option>
+<option>Dominican Republic (the)</option>
+<option>Ecuador</option>
+<option>Egypt</option>
+<option>El Salvador</option>
+<option>Equatorial Guinea</option>
+<option>Eritrea</option>
+<option>Estonia</option>
+<option>Ethiopia</option>
+<option>Falkland Islands (the) [Malvinas]</option>
+<option>Faroe Islands (the)</option>
+<option>Fiji</option>
+<option>Finland</option>
+<option>France</option>
+<option>French Guiana</option>
+<option>French Polynesia</option>
+<option>French Southern Territories (the)</option>
+<option>Gabon</option>
+<option>Gambia (the)</option>
+<option>Georgia</option>
+<option>Germany</option>
+<option>Ghana</option>
+<option>Gibraltar</option>
+<option>Greece</option>
+<option>Greenland</option>
+<option>Grenada</option>
+<option>Guadeloupe</option>
+<option>Guam</option>
+<option>Guatemala</option>
+<option>Guernsey</option>
+<option>Guinea</option>
+<option>Guinea-Bissau</option>
+<option>Guyana</option>
+<option>Haiti</option>
+<option>Heard Island and McDonald Islands</option>
+<option>Holy See (the)</option>
+<option>Honduras</option>
+<option>Hong Kong</option>
+<option>Hungary</option>
+<option>Iceland</option>
+<option>India</option>
+<option>Indonesia</option>
+<option>Iran (Islamic Republic of)</option>
+<option>Iraq</option>
+<option>Ireland</option>
+<option>Isle of Man</option>
+<option>Israel</option>
+<option>Italy</option>
+<option>Jamaica</option>
+<option>Japan</option>
+<option>Jersey</option>
+<option>Johnston Island</option>
+<option>Jordan</option>
+<option>Kazakhstan</option>
+<option>Kenya</option>
+<option>Kiribati</option>
+<option>Korea (the Democratic People's Republic of)</option>
+<option>Korea (the Republic of)</option>
+<option>Kuwait</option>
+<option>Kyrgyzstan</option>
+<option>Lao People's Democratic Republic (the)</option>
+<option>Latvia</option>
+<option>Lebanon</option>
+<option>Lesotho</option>
+<option>Liberia</option>
+<option>Libya</option>
+<option>Liechtenstein</option>
+<option>Lithuania</option>
+<option>Luxembourg</option>
+<option>Macao</option>
+<option>Macedonia (the former Yugoslav Republic of)</option>
+<option>Madagascar</option>
+<option>Malawi</option>
+<option>Malaysia</option>
+<option>Maldives</option>
+<option>Mali</option>
+<option>Malta</option>
+<option>Marshall Islands (the)</option>
+<option>Martinique</option>
+<option>Mauritania</option>
+<option>Mauritius</option>
+<option>Mayotte</option>
+<option>Mexico</option>
+<option>Micronesia (Federated States of)</option>
+<option>Midway Islands</option>
+<option>Moldova (the Republic of)</option>
+<option>Monaco</option>
+<option>Mongolia</option>
+<option>Montenegro</option>
+<option>Montserrat</option>
+<option>Morocco</option>
+<option>Mozambique</option>
+<option>Myanmar</option>
+<option>Namibia</option>
+<option>Nauru</option>
+<option>Nepal</option>
+<option>Netherlands (the)</option>
+<option>New Caledonia</option>
+<option>New Zealand</option>
+<option>Nicaragua</option>
+<option>Niger (the)</option>
+<option>Nigeria</option>
+<option>Niue</option>
+<option>Norfolk Island</option>
+<option>Northern Mariana Islands (the)</option>
+<option>Norway</option>
+<option>Oman</option>
+<option>Pakistan</option>
+<option>Palau</option>
+<option>Palestine, State of</option>
+<option>Panama</option>
+<option>Papua New Guinea</option>
+<option>Paraguay</option>
+<option>Peru</option>
+<option>Philippines (the)</option>
+<option>Pitcairn</option>
+<option>Poland</option>
+<option>Portugal</option>
+<option>Puerto Rico</option>
+<option>Qatar</option>
+<option value="Réunion">Réunion</option>
+<option>Romania</option>
+<option>Russian Federation (the)</option>
+<option>Rwanda</option>
+<option value="Saint Barthélemy">Saint Barthélemy</option>
+<option>Saint Helena, Ascension and Tristan da Cunha</option>
+<option>Saint Kitts and Nevis</option>
+<option>Saint Lucia</option>
+<option>Saint Martin (French part)</option>
+<option>Saint Pierre and Miquelon</option>
+<option>Saint Vincent and the Grenadines</option>
+<option>Samoa</option>
+<option>San Marino</option>
+<option>Sao Tome and Principe</option>
+<option>Saudi Arabia</option>
+<option>Senegal</option>
+<option>Serbia</option>
+<option>Seychelles</option>
+<option>Sierra Leone</option>
+<option>Singapore</option>
+<option>Sint Maarten (Dutch part)</option>
+<option>Slovakia</option>
+<option>Slovenia</option>
+<option>Solomon Islands</option>
+<option>Somalia</option>
+<option>South Africa</option>
+<option>South Georgia and the South Sandwich Islands</option>
+<option>South Sudan</option>
+<option>Southern Rhodesia</option>
+<option>Spain</option>
+<option>Sri Lanka</option>
+<option>Sudan (the)</option>
+<option>Suriname</option>
+<option>Svalbard and Jan Mayen</option>
+<option>Swaziland</option>
+<option>Sweden</option>
+<option>Switzerland</option>
+<option>Syrian Arab Republic</option>
+<option>Taiwan (Province of China)</option>
+<option>Tajikistan</option>
+<option>Tanzania, United Republic of</option>
+<option>Thailand</option>
+<option>Timor-Leste</option>
+<option>Togo</option>
+<option>Tokelau</option>
+<option>Tonga</option>
+<option>Trinidad and Tobago</option>
+<option>Tunisia</option>
+<option>Turkey</option>
+<option>Turkmenistan</option>
+<option>Turks and Caicos Islands (the)</option>
+<option>Tuvalu</option>
+<option>Uganda</option>
+<option>Ukraine</option>
+<option>United Arab Emirates (the)</option>
+<option>United Kingdom</option>
+<option>United States</option>
+<option>United States Minor Outlying Islands (the)</option>
+<option>Upper Volta</option>
+<option>Uruguay</option>
+<option>Uzbekistan</option>
+<option>Vanuatu</option>
+<option>Venezuela (Bolivarian Republic of)</option>
+<option>Viet Nam</option>
+<option>Virgin Islands (British)</option>
+<option>Virgin Islands (U.S.)</option>
+<option>Wallis and Futuna</option>
+<option>Western Sahara</option>
+<option>Yemen</option>
+<option>Zambia</option>
+<option>Zimbabwe</option>
+</select>
+</div>
+</div>
+<div class="field field-three-eights">
+<div class="field-input-wrapper">
+<input placeholder="State" required="true" type="text" name="Contact0State2" size="2" maxlength="2">
+</div>
+</div>
+<div class="field field-one-fourth">
+<div class="field-input-wrapper">
+<input placeholder="Postal Code" required="true" type="text" name="Contact0PostalCode2" size="15">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="inf-payment-section" style="display: none;">
 <h2>Payment Information</h2>
 <div class="fieldset">
 <div class="field">
@@ -540,12 +839,100 @@ display: inline-block;
 </div>
 </div>
 </div>
+</div>
 <div>
 <input syle="display: none;" type="radio" name="PurchaseType" value="A" checked="">
 </div>
 <div class="text-right">
-<input class="btn-original" value="Complete Order" type="submit" name="Order">
+<div id="inf-next" class="btn-original">Next</div>
+<div id="inf-back" class="btn-original" style="display: none; padding-top: 17px;">Back</div>
+<input id="inf-submit" style="display: none;" class="btn-original" value="Complete Order" type="submit" name="Order">
 </div>
 </div>
 </form>
 </div>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script>
+jQuery(document).ready(function() {
+  function setShippingOption() {
+    var bCountry = jQuery('[name="Contact0Country"]')[0].value;
+    var sCountry = jQuery('[name="Contact0Country2"]')[0].value;
+
+    var country = sCountry ? sCountry : bCountry;
+
+    if (country === "United States") {
+      jQuery('[name="ShippingOptionId"]').val(5) // 5 for US
+    } else {
+      jQuery('[name="ShippingOptionId"]').val(7) // 7 for Europe
+    }
+  }
+  jQuery('select').on('change', function() {
+    setShippingOption();
+  });
+  setShippingOption();
+
+  // CHANGE FORM ID
+  var FORM_ID = 1;
+  // CHANGE FORM ID
+
+  function recalculateShipping() {
+    var dataType = "json";
+    var secureServerString = "https://mz164.infusionsoft.com"
+    		if(window.location.toString().search('https://mz164.infusionsoft.com') != 0){
+    			dataType = "jsonp";
+    		}
+    var sanitized = "";
+    var fields = jQuery("#orderForm input");
+    jQuery.each(fields, function(i, element) {
+         if(!/CreditCard0/.test(element.name)) {
+            var elementValue = element.value;
+            elementValue = elementValue.replace('#', '');
+            sanitized += element.name + "=" + elementValue + "&";
+         }
+    });
+
+    sanitized += "formId=" + FORM_ID;
+
+    jQuery.ajax({
+      url: secureServerString + "/app/orderForm/getShippingRates." + dataType,
+      data: sanitized,
+      dataType: dataType,
+      success: function(data, textStatus, jqXHR) {
+        var baseValue = parseFloat(jQuery('#baseTotal').val());
+        var shippingValue = parseFloat(data.quotes[0].price);
+        var shippingOptionId = data.quotes[0].id;
+
+        jQuery('#PayTotal_A').val(baseValue + shippingValue);
+        jQuery('[name="ShippingOptionId"]').val(shippingOptionId);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+         console.log(errorThrown);
+      }
+    });
+  }
+
+  jQuery("#orderForm input").on('blur', recalculateShipping);
+
+  jQuery('#inf-next').on('click', function(elm) {
+    jQuery('#inf-contact-billing-section').hide();
+    jQuery('#inf-next').hide();
+
+    jQuery('#inf-payment-section').show();
+    jQuery('#inf-back').show();
+    jQuery('#inf-submit').show();
+  });
+
+  jQuery('#inf-back').on('click', function(elm) {
+    jQuery('#inf-contact-billing-section').show();
+    jQuery('#inf-next').show();
+
+    jQuery('#inf-payment-section').hide();
+    jQuery('#inf-back').hide();
+    jQuery('#inf-submit').hide();
+  });
+
+});
+</script>
