@@ -11,6 +11,8 @@ isform-shipping.html        - Basic one page form with shipping
 isform.html                 - Basic one page form
 ```
 
+When viewing a template you can click "Raw" to see the full file on its own page to make copying easier.
+
 2. Copy all the template code into wordpress. All the css is included in the template.
 
 3. Create a new legacy form and preview it.
