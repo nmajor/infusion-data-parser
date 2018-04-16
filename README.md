@@ -2,6 +2,15 @@ How to use the templates:
 
 1. Select one of the templates at https://github.com/nmajor/infusion-data-parser/tree/master/templates
 
+Right now there are 4 templates:
+
+```
+isform-2-step-shipping.html - Form split into 2 steps with shipping
+isform-2-step.html          - Form split into 2 steps
+isform-shipping.html        - Basic one page form with shipping
+isform.html                 - Basic one page form
+```
+
 2. Copy all the template code into wordpress. All the css is included in the template.
 
 3. Create a new legacy form and preview it.
